@@ -10,7 +10,6 @@ async function bootstrap() {
     .setTitle('Fit Match API')
     .setDescription('Fit Match API Swagger')
     .setVersion('1.0')
-    .addTag('fitMatch')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
