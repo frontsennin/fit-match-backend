@@ -7,6 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { AppointmentModel } from 'src/models/appointment.model';
 import { CreateAppointmentDto } from '../dto/CreateAppontment.dto';
+import { UpdateAppointmentDto } from '../dto/UpdateAppontment.dto';
 
 @Injectable()
 export class AppontmentService {
@@ -21,4 +22,21 @@ export class AppontmentService {
         return newAppontment.save();
     }
 
+    
+
+    getAll() {
+        return this.appontmentModel.find()
+    }
+
+    getById(id: string) {
+        return this.appontmentModel.findById(id)
+    }
+
+    updateById(id: string, updateAppointmentDto: UpdateAppointmentDto) {
+        return this.appontmentModel.findByIdAndUpdate(id, updateAppointmentDto, { new: true })
+    }
+
+    deleteById(id: string) {
+        return this.appontmentModel.findByIdAndDelete(id)
+    }
 }

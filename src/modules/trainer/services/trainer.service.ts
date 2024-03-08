@@ -7,6 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { TrainerModel } from 'src/models/trainer.model';
 import { CreateTrainerDto } from '../dto/CreateTrainer.dto';
+import { UpdateTrainerDto } from '../dto/UpdateTrainer.dto';
 
 @Injectable()
 export class TrainerService {
@@ -19,6 +20,22 @@ export class TrainerService {
         const newTrainer = new this.trainerModel(createTrainerDto);
 
         return newTrainer.save();
+    }
+
+    getAll() {
+        return this.trainerModel.find()
+    }
+
+    getById(id: string) {
+        return this.trainerModel.findById(id)
+    }
+
+    updateById(id: string, updateTrainerDto: UpdateTrainerDto) {
+        return this.trainerModel.findByIdAndUpdate(id, updateTrainerDto, { new: true })
+    }
+
+    deleteById(id: string) {
+        return this.trainerModel.findByIdAndDelete(id)
     }
 
 }
