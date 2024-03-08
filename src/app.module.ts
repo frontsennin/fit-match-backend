@@ -9,7 +9,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
 
-const mongoUser = process.env.DATABASE_SETTINGS || 'mongodb://localhost:27017/fit_match'
+const mongoUser = process.env.MONGODB || 'mongodb://localhost:27017/fit_match'
 @Module({
   imports: [
     MongooseModule.forRoot(mongoUser),
