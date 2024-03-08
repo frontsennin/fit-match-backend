@@ -6,7 +6,7 @@ https://docs.nestjs.com/modules
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { NotificationModel, NotificationSchema } from 'src/models/notification.model';
+import { NotificationModel, NotificationSchema } from '../../models/notification.model';
 
 @Module({
     imports: [

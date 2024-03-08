@@ -5,7 +5,7 @@ https://docs.nestjs.com/providers#services
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { FitnessClassModel } from 'src/models/fitness-class.model';
+import { FitnessClassModel } from '../../../models/fitness-class.model';
 import { CreateFitnessClassDto } from '../dto/CreateFitnessClass.dto';
 import { UpdateFitnessClassDto } from '../dto/UpdateFitnessClass.dto';
 

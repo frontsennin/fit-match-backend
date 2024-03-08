@@ -6,7 +6,7 @@ https://docs.nestjs.com/modules
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { TrainerModel, TrainerSchema } from 'src/models/trainer.model';
+import { TrainerModel, TrainerSchema } from '../../models/trainer.model';
 
 @Module({
     imports: [
