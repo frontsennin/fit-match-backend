@@ -7,12 +7,11 @@ import { AppontmentModule } from './modules/appontment/appontment.module';
 import { UserModule } from './modules/user/user.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-
-
-const mongoUser = process.env.MONGODB || 'mongodb://localhost:27017/fit_match'
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
-    MongooseModule.forRoot(mongoUser),
+    MongooseModule.forRoot('mongodb+srv://nicolasmazia666:eA9mnpuHyf3Uy1fy@cluster0.lam9nsg.mongodb.net/'),
+    ConfigModule.forRoot(),
     TrainerModule,
     ReviewModule,
     PaymentModule,
