@@ -8,10 +8,11 @@ import { UserModule } from './modules/user/user.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
+
+const mongoUser = process.env.DATABASE_SETTINGS || 'mongodb://localhost:27017/fit_match'
 @Module({
   imports: [
-    // MongooseModule.forRoot('mongodb+srv://nicolasmazia666:eA9mnpuHyf3Uy1fy@cluster0.lam9nsg.mongodb.net/'),
-    MongooseModule.forRoot('mongodb://localhost:27017/fit_match'),
+    MongooseModule.forRoot(mongoUser),
     TrainerModule,
     ReviewModule,
     PaymentModule,
