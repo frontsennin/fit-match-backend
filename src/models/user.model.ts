@@ -1,29 +1,31 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Role } from "./role.model";
 
-@Entity()
+@Schema()
 export class UserModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true})
     userId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     username: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     cpf: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     email: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     phoneNumber: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     password: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     profilePicture: string;
 
-    @Column({nullable: false})
-    role: Role
+    @Prop({ required: true })
+    role: Role;
 }
+
+export const UserSchema = SchemaFactory.createForClass(UserModel)

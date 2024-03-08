@@ -1,16 +1,18 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class FitnessClassModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     classId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     className: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     maxParticipants: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     currentParticipants: number
 }
+
+export const FitnessClassSchema = SchemaFactory.createForClass(FitnessClassModel)

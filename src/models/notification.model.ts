@@ -1,20 +1,20 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class NotificationModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     notificationId: number
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     userId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     content: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     status: NotificationStatus;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     createdAt: Date;
 }
 
@@ -22,3 +22,5 @@ export enum NotificationStatus {
     READ,
     NOT_READ
 }
+
+export const NotificationSchema = SchemaFactory.createForClass(NotificationModel)

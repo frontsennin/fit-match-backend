@@ -1,11 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class Role {
-    @PrimaryGeneratedColumn()
+    @Prop({ required: true })
     roleId: RoleType;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     roleTitle: string;
 }
 
@@ -14,3 +14,5 @@ export enum RoleType {
     TRAINER,
     ADMIN
 }
+
+export const RoleSchema = SchemaFactory.createForClass(Role)

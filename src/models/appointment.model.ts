@@ -1,20 +1,20 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class AppointmentModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     appointmentId: number;
-
-    @Column({nullable: false})
-    userId: number;
     
-    @Column({nullable: false})
+    @Prop({ required: true })
+    userId: number;
+
+    @Prop({ required: true })
     trainerId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     dateTime: Date;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     status: AppointmentStatus;
 }
 
@@ -25,3 +25,5 @@ export enum AppointmentStatus {
     PENDING_PAYMENT,
     CAMCELED
 }
+
+export const AppointmentSchema = SchemaFactory.createForClass(AppointmentModel)

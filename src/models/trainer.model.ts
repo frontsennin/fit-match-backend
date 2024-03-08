@@ -1,28 +1,30 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class TrainerModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     trainerId:number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     cpf: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     crefi: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     email: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     phoneNumber: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     userId:number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     specialization: string[] = [];
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     availability: boolean = true;
 }
+
+export const TrainerSchema = SchemaFactory.createForClass(TrainerModel)

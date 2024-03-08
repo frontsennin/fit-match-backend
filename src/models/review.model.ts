@@ -1,22 +1,24 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class ReviewModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     reviewId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     userId: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     trainerId:number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     rating: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     comment: string;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     createdAt: Date;
 }
+
+export const ReviewSchema = SchemaFactory.createForClass(ReviewModel)

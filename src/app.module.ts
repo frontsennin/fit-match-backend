@@ -6,9 +6,12 @@ import { FitnessClassModule } from './modules/fitness-class/fitness-class.module
 import { AppontmentModule } from './modules/appontment/appontment.module';
 import { UserModule } from './modules/user/user.module';
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
+    // MongooseModule.forRoot('mongodb+srv://nicolasmazia666:eA9mnpuHyf3Uy1fy@cluster0.lam9nsg.mongodb.net/'),
+    MongooseModule.forRoot('mongodb://localhost:27017/fit_match'),
     TrainerModule,
     ReviewModule,
     PaymentModule,

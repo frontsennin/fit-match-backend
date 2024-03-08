@@ -1,23 +1,23 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-@Entity()
+@Schema()
 export class PaymentModel {
-    @PrimaryGeneratedColumn()
+    @Prop({ unique: true, required: true })
     paymentId:number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     userId :number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     amount: number;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     paymentDate: Date;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     status: PaymentStatus;
 
-    @Column({nullable: false})
+    @Prop({ required: true })
     paymentMethod: PaymentMethod;
 }
 
@@ -33,3 +33,5 @@ export enum PaymentMethod {
     DEBIT,
     PIX
 }
+
+export const PaymentSchema = SchemaFactory.createForClass(PaymentModel)

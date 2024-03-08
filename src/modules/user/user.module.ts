@@ -5,9 +5,18 @@ https://docs.nestjs.com/modules
 */
 
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UserModel, UserSchema } from 'src/models/user.model';
 
 @Module({
-    imports: [],
+    imports: [
+        MongooseModule.forFeature([
+            {
+                name: UserModel.name,
+                schema: UserSchema
+            }
+        ])
+    ],
     controllers: [
         UserController
     ],

@@ -5,9 +5,18 @@ https://docs.nestjs.com/modules
 */
 
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ReviewModel, ReviewSchema } from 'src/models/review.model';
 
 @Module({
-    imports: [],
+    imports: [
+        MongooseModule.forFeature([
+            {
+                name: ReviewModel.name,
+                schema: ReviewSchema
+            }
+        ])
+    ],
     controllers: [
         ReviewController,],
     providers: [
