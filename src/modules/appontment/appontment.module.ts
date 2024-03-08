@@ -3,7 +3,7 @@ import { AppontmentController } from './controllers/appontment.controller';
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppointmentModel, AppointmentSchema } from 'src/models/appointment.model';
+import { AppointmentModel, AppointmentSchema } from '../../models/appointment.model';
 
 @Module({
     imports: [

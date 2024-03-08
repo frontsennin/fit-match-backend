@@ -5,7 +5,7 @@ https://docs.nestjs.com/providers#services
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { PaymentModel } from 'src/models/payment.model';
+import { PaymentModel } from '../../../models/payment.model';
 import { CreatePaymentDto } from '../dto/CreatePayment.dto';
 import { UpdatePaymentDto } from '../dto/UpdatePayment.dto';
 

@@ -6,7 +6,7 @@ https://docs.nestjs.com/modules
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserModel, UserSchema } from 'src/models/user.model';
+import { UserModel, UserSchema } from '../../models/user.model';
 
 @Module({
     imports: [

@@ -6,7 +6,7 @@ https://docs.nestjs.com/modules
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { PaymentModel, PaymentSchema } from 'src/models/payment.model';
+import { PaymentModel, PaymentSchema } from '../../models/payment.model';
 
 @Module({
     imports: [

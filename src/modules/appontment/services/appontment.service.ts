@@ -5,7 +5,7 @@ https://docs.nestjs.com/providers#services
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { AppointmentModel } from 'src/models/appointment.model';
+import { AppointmentModel } from '../../../models/appointment.model';
 import { CreateAppointmentDto } from '../dto/CreateAppontment.dto';
 import { UpdateAppointmentDto } from '../dto/UpdateAppontment.dto';
 

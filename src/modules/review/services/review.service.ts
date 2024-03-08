@@ -5,7 +5,7 @@ https://docs.nestjs.com/providers#services
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ReviewModel } from 'src/models/review.model';
+import { ReviewModel } from '../../../models/review.model';
 import { CreateReviewDto } from '../dto/CreateReview.dto';
 import { UpdateReviewDto } from '../dto/UpdateReview.dto';
 

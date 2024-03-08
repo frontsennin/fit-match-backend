@@ -3,7 +3,7 @@ import { FitnessClassController } from './controllers/fitness-class.controller';
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { FitnessClassModel, FitnessClassSchema } from 'src/models/fitness-class.model';
+import { FitnessClassModel, FitnessClassSchema } from '../../models/fitness-class.model';
 
 @Module({
     imports: [
